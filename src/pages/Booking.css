@@ -1,0 +1,424 @@
+/* ==========================================
+   BOOKING PAGE STYLES
+   ========================================== */
+
+.booking-page {
+  padding: 2.5rem 0 5rem 0;
+}
+
+.booking-top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.booking-security-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-success);
+  background: var(--color-success-soft);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.booking-page-title {
+  font-size: clamp(2rem, 3.5vw + 0.5rem, 2.6rem);
+  color: var(--color-primary);
+  margin-bottom: 2.5rem;
+}
+
+/* Two-column layout */
+.booking-page-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1.1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+/* Form Column */
+.booking-form-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-card-block {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-block-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.form-block-header h3 {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Payment Mode Radios */
+.payment-options-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.payment-option-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-bg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.payment-option-card:hover {
+  border-color: var(--color-primary-light);
+}
+
+.payment-option-card.active {
+  border-color: var(--color-primary);
+  background: var(--color-surface);
+  box-shadow: 0 4px 14px rgba(27, 59, 43, 0.08);
+}
+
+.payment-option-card input[type="radio"] {
+  accent-color: var(--color-primary);
+  width: 18px;
+  height: 18px;
+}
+
+.payment-icon {
+  color: var(--color-accent);
+}
+
+.payment-label-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-label-group strong {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+}
+
+.payment-label-group span {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.card-mock-fields {
+  background: var(--color-bg);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-light);
+  margin-top: 1rem;
+}
+
+.confirm-booking-btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.booking-terms-note {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+/* Summary Card */
+.booking-summary-col {
+  position: relative;
+}
+
+.booking-summary-card {
+  position: sticky;
+  top: calc(var(--navbar-height) + 1.5rem);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.summary-card-title {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.summary-property-snippet {
+  display: flex;
+  gap: 1rem;
+}
+
+.summary-thumb {
+  width: 100px;
+  height: 90px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.summary-property-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.summary-category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.summary-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.summary-location {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.summary-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--color-text-main);
+}
+
+.summary-rating span {
+  color: var(--color-text-muted);
+}
+
+.summary-divider {
+  height: 1px;
+  background: var(--color-border-light);
+  margin: 1.5rem 0;
+}
+
+.summary-trip-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.trip-detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.trip-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.trip-value {
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
+/* Price Details */
+.price-calc-heading {
+  font-size: 1rem;
+  color: var(--color-primary);
+  margin-bottom: 0.85rem;
+}
+
+.price-calc-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.92rem;
+  color: var(--color-text-body);
+  margin-bottom: 0.6rem;
+}
+
+.price-calc-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 0.5rem;
+}
+
+.total-highlight {
+  font-family: var(--font-accent);
+  font-size: 1.4rem;
+  color: var(--color-primary);
+}
+
+.summary-reassurance {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  background: var(--color-bg);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  margin-top: 1.5rem;
+  border: 1px solid var(--color-border-light);
+}
+
+.reassurance-icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.summary-reassurance strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-primary);
+}
+
+.summary-reassurance p {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Confirmation Success Modal */
+.booking-success-modal {
+  text-align: center;
+  max-width: 500px;
+}
+
+.success-icon-wrapper {
+  margin-bottom: 1rem;
+}
+
+.success-check-icon {
+  color: var(--color-success);
+}
+
+.booking-success-modal h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.success-subtitle {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.booking-ref-box {
+  background: var(--color-primary-soft);
+  border: 1px dashed var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.booking-ref-box span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.booking-ref-box strong {
+  font-family: var(--font-accent);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+}
+
+.success-booking-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.success-summary-item span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.success-summary-item strong {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+}
+
+.success-instructions {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.75rem;
+  line-height: 1.5;
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .booking-page-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .booking-summary-card {
+    position: static;
+  }
+}

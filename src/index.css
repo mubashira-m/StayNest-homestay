@@ -1,0 +1,371 @@
+/* ===================================================================
+   STAYNEST DESIGN SYSTEM & GLOBAL STYLES
+   Warm, natural, comfortable, travel-focused, premium aesthetic.
+   Color Palette: Cream/Ivory, Dark Green, Warm Brown/Terracotta, Beige, White.
+   =================================================================== */
+
+:root {
+  /* Brand Color Palette */
+  --color-primary: #1B3B2B;        /* Deep Forest Green */
+  --color-primary-light: #2D5A43;  /* Sage Forest Green */
+  --color-primary-dark: #10261B;   /* Midnight Evergreen */
+  --color-primary-soft: #EBF3EE;   /* Soft Forest Mist */
+  --color-primary-subtle: #E2ECE5;
+
+  --color-accent: #C47444;         /* Warm Earthy Terracotta */
+  --color-accent-light: #D98959;   /* Warm Sandstone */
+  --color-accent-dark: #9F5428;    /* Deep Cinnamon */
+  --color-accent-soft: #FBF0E9;    /* Warm Amber Ivory */
+
+  --color-bg: #FAF7F2;             /* Warm Cream / Natural Ivory */
+  --color-bg-alt: #F4EFE7;         /* Soft Sand Beige */
+  --color-surface: #FFFFFF;        /* Pure Warm White */
+  --color-surface-hover: #FDFBF8;
+
+  --color-border: #E8E0D5;         /* Muted Sand Border */
+  --color-border-light: #F0EAE1;
+  --color-border-focus: #1B3B2B;
+
+  --color-text-main: #222924;      /* Deep Earth Charcoal */
+  --color-text-body: #49544D;      /* Warm Graphite */
+  --color-text-muted: #748078;     /* Muted Sage Slate */
+  --color-text-light: #9DA8A1;     /* Soft Grey */
+  --color-text-white: #FFFFFF;
+
+  --color-star: #F5A623;           /* Golden Warm Honey */
+  --color-success: #2E7D32;
+  --color-success-soft: #E8F5E9;
+  --color-warning: #ED6C02;
+  --color-warning-soft: #FFF4E5;
+  --color-danger: #D32F2F;
+  --color-danger-soft: #FFEBEE;
+  --color-info: #0288D1;
+  --color-info-soft: #E1F5FE;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-accent: 'Outfit', sans-serif;
+
+  /* Elevation Shadows */
+  --shadow-xs: 0 1px 2px rgba(27, 59, 43, 0.04);
+  --shadow-sm: 0 2px 8px rgba(27, 59, 43, 0.06);
+  --shadow-md: 0 8px 24px rgba(27, 59, 43, 0.08);
+  --shadow-lg: 0 16px 36px rgba(27, 59, 43, 0.12);
+  --shadow-xl: 0 24px 50px rgba(27, 59, 43, 0.16);
+  --shadow-hover: 0 14px 32px rgba(27, 59, 43, 0.14);
+
+  /* Border Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --max-width: 1280px;
+  --navbar-height: 80px;
+}
+
+/* CSS Reset & Defaults */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h1 { font-size: clamp(2rem, 4vw + 1rem, 3.5rem); }
+h2 { font-size: clamp(1.6rem, 3vw + 0.5rem, 2.5rem); }
+h3 { font-size: clamp(1.25rem, 2vw + 0.2rem, 1.75rem); }
+h4 { font-size: 1.25rem; }
+
+p {
+  color: var(--color-text-body);
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  border: none;
+  background: none;
+  outline: none;
+  transition: all var(--transition-normal);
+}
+
+input, select, textarea {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  outline: none;
+  border: 1px solid var(--color-border);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(27, 59, 43, 0.12);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Common Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem auto;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  margin-bottom: 0.75rem;
+  color: var(--color-primary);
+}
+
+.section-subtitle {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+}
+
+/* UI Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all var(--transition-normal);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  box-shadow: 0 4px 12px rgba(27, 59, 43, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(27, 59, 43, 0.25);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  box-shadow: 0 4px 12px rgba(196, 116, 68, 0.25);
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(196, 116, 68, 0.35);
+}
+
+.btn-secondary {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-bg);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background: transparent;
+  color: var(--color-surface);
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+}
+
+.btn-outline-white:hover {
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+.btn-lg {
+  padding: 0.95rem 2rem;
+  font-size: 1.05rem;
+}
+
+/* Status Badges */
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badge-status.confirmed {
+  background: var(--color-success-soft);
+  color: var(--color-success);
+}
+
+.badge-status.pending {
+  background: var(--color-warning-soft);
+  color: var(--color-warning);
+}
+
+.badge-status.cancelled {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+.badge-status.completed {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+/* Rating Pill */
+.rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--color-surface);
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  box-shadow: var(--shadow-xs);
+}
+
+.rating-pill svg {
+  color: var(--color-star);
+  fill: var(--color-star);
+}
+
+/* Card base */
+.card-base {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.card-base:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.25); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-heart-beat {
+  animation: heartBeat 0.35s ease-in-out;
+}

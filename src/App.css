@@ -1,0 +1,13 @@
+/* ==========================================
+   APP SHELL STYLES
+   ========================================== */
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main-content {
+  flex: 1;
+}
