@@ -9,6 +9,7 @@ export const reviews = [
     date: "October 2025",
     text: "Staying at Cozy Mountain Mist Villa was the most refreshing break of our year. Waking up to the morning fog drifting over the coffee estate while Mathew served warm appams and freshly plucked coffee was pure magic. We will definitely return!",
     verified: true
+
   },
   {
     id: 2,
